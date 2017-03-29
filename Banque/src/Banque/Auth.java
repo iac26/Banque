@@ -29,8 +29,8 @@ public class Auth implements ActionListener{
 		B7 = new JButton("7");
 		B8 = new JButton("8");
 		B9 = new JButton("9");
-		BOK = new JButton(" ");
-		BCORR = new JButton(" ");
+		BOK = new JButton(">");
+		BCORR = new JButton("<");
 		pass = new JPasswordField();
 		pass.setEditable(false);
 		pass.setFont(pass.getFont().deriveFont(30.0f));
@@ -82,14 +82,11 @@ public class Auth implements ActionListener{
 	}
 	
 	public static void setCheck(String s){
-		int a = Integer.parseInt(s);
-		a = a - 123456;
-		check = String.valueOf(a); 
+		check = s; 
 	}
 	public static String getCheck(){
-		int a = Integer.parseInt(check);
-		a = a + 123456;
-		return String.valueOf(a);
+		
+		return check;
 	}
 	
 	private JFrame frame;
