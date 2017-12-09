@@ -46,6 +46,8 @@ public class Gestion implements ActionListener, WindowListener {
 		histoire.setLineWrap(true);
 	    histoire.setEditable(false);
 	    histoire.setVisible(true);
+	    histoire.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
+	    solde.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
 		solde.setBounds(50, 360, 590, 20);
 		scroll.setBounds(50, 30, 590, 300); // last field 300
 		scroll.setViewportBorder(null);
@@ -61,7 +63,7 @@ public class Gestion implements ActionListener, WindowListener {
 		c.add(solde);
 		c.add(scroll);
 		c.add(infos);
-		refresh();
+		histoire.setText(cpt.getHistory());
 		depot.addActionListener(this);
 		retrait.addActionListener(this);
 		virement.addActionListener(this);
@@ -86,9 +88,6 @@ public class Gestion implements ActionListener, WindowListener {
 		},0, 500);
 	}
 	
-	public void refresh() {
-		histoire.setText(cpt.getHistory());
-	}
 	public void close() {
 		frame.setVisible(false);
 	}

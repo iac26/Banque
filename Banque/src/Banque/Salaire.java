@@ -53,22 +53,22 @@ public class Salaire {
 	}
 	
 	public void start() {
-		
+		System.out.println(this.name + "started!");
 		Timer timer1 = new Timer();
 		timer1.schedule(new TimerTask() {
-			
+		
 			@Override
 			public void run(){
 				if (on) {
-					String str = str = type + " - " +name;
+					String str = type + " - " +name;
 					System.out.println("paying" + name + type);
 					float solde = cpt.getSolde();
-					if (type == "salaire") {
-						if (val == "abs") {
+					if (type.equals("salaire")) {
+						System.out.println("value: "+val);
+						if (val.equals("abs")) {
 							cpt.depot(montant);
 							cpt.addHItem(Banque.TextAlign(str, montant, "+"));
-						}else if ((val == "rel") && (solde > 0)) {
-							
+						}else if ((val.equals("rel")) && (solde > 0)) {
 							float montf = montant;
 							float mont = solde* (montf/1000);
 							cpt.depot(Math.round(mont));
@@ -77,11 +77,11 @@ public class Salaire {
 							cpt.addHItem(Banque.TextAlign(str, 0, "+"));
 						}
 						
-					}else if (type == "impot") {
-						if (val == "abs") {
+					}else if (type.equals("impot")) {
+						if (val.equals("abs")) {
 							cpt.retrait(montant);
 							cpt.addHItem(Banque.TextAlign(str, montant, "-"));
-						}else if ((val == "rel") && (solde > 0)) {
+						}else if ((val.equals("rel")) && (solde > 0)) {
 							float montf = montant;
 							float mont = solde* (montf/1000);
 							cpt.retrait(Math.round(mont));

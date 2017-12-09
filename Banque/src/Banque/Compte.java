@@ -30,10 +30,10 @@ public class Compte {
 	}
 	public void addHItem(String s) {
 		//history.add(s);
-		history.add(0, s);
+		history.add(s);
 	}
 	public String getHistory() {
-		String str = " \n";
+		String str = "";
 		for (int i = 0; i < history.size(); i++) {
 			String s = history.get(i);
 			str = str + s + "\n";

@@ -93,7 +93,8 @@ public class Banque {
 		String message = m;
 		String solde = String.valueOf(s);
 		int l = message.length();
-		int spaces = (45) - l;
+		int x = solde.length();
+		int spaces = 70 - l - x;
 		Calendar calendar = Calendar.getInstance();
 		int min = calendar.get(Calendar.MINUTE);
 		int hr = calendar.get(Calendar.HOUR_OF_DAY);
@@ -111,10 +112,10 @@ public class Banque {
 		}
 		String str = hours + ":" + minutes + " ";
 		str = str+ message;
-		for (int i = 0; i < (spaces); i++){
+		for (int i = 0; i < spaces; i++){
 			str = str + " " ;
 		}
-		str = str + "\t" +  solde + sgn; 
+		str = str +  solde + sgn; 
 		return str;
 	}
 	

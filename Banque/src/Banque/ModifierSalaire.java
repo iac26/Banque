@@ -31,6 +31,7 @@ public class ModifierSalaire implements ActionListener{
 		type = new JComboBox(choix);
 		val = new JComboBox(choixVal);
 		val.setSelectedItem(salaire.getVal());
+		frequence.setEnabled(false);
 		name.setBounds(140, 30, 200, 25);
 		type.setBounds(140, 130, 80, 20);
 		ajouter.setBounds(240, 170, 100, 20);

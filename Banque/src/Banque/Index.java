@@ -23,7 +23,11 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 		ver = new JButton("");
 		lst = new DefaultListModel();
 		list = new JList(lst);
+		scroll = new JScrollPane(list);
 		list.setBounds(20, 20, 150, 500);
+		scroll.setBounds(20, 20, 150, 500);
+		scroll.setViewportBorder(null);
+		scroll.setBorder(null);
 		ajouter.setBounds(45, 570, 100, 20);
 		ouvrir.setBounds(45, 540, 100, 20);
 		supprimer.setBounds(45, 600, 100, 20);
@@ -34,9 +38,10 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 		ver.setBackground(Color.GREEN);
 		c.add(ajouter);
 		c.add(ouvrir);
-		c.add(list);
+		//c.add(list);
 		c.add(salaires);
 		c.add(supprimer);
+		c.add(scroll);
 		c.add(ver);
 		frame.getRootPane().setDefaultButton(ouvrir);
 		ajouter.addActionListener(this);
@@ -48,6 +53,7 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 		supprimer.addActionListener(this);
 		ver.addMouseListener(this);
 		Ver();
+		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
 		
 	}
@@ -89,6 +95,7 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 	private JList list;
 	private Compte cpt; 
 	private JFrame frame;
+	private JScrollPane scroll;
 	private Salaires sal;
 	private boolean VerState = false, selEmpty = true; 
 	private ArrayList<Gestion> gest = new ArrayList<Gestion>(); 

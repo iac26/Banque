@@ -58,7 +58,7 @@ public class Versement implements ActionListener {
 				cptd.depot(n);
 				String str = "Versement vers " + des;
 				cpt.addHItem(Banque.TextAlign(str, n, "-"));
-				str = "Versement depuis " + des;
+				str = "Versement depuis " + cpt.getName();
 				cptd.addHItem(Banque.TextAlign(str, n, "+"));
 				frame.setVisible(false);
 				cpt.save();
