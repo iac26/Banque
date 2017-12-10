@@ -22,23 +22,29 @@ public class NouveauSalaire implements ActionListener {
 		val = new JComboBox(choixVal);
 		labelName = new JLabel("Nom");
 		labelMontant = new JLabel("Montant");
-		labelFrequence = new JLabel("Frequence");
+		labelFrequence = new JLabel("Periode");
 		labelDest = new JLabel("Destinataire");
+		labelPercent = new JLabel("");
+		labelSeconds = new JLabel("sec");
 		dest = new JComboBox(Banque.cl.keySet().toArray());
 		type = new JComboBox(choix);
-		val.setBounds(270, 62, 70, 20);
+		val.setBounds(270, 62, 80, 20);
 		name.setBounds(140, 30, 200, 25);
-		type.setBounds(140, 130, 80, 20);
+		type.setBounds(130, 130, 100, 20);
 		ajouter.setBounds(240, 170, 100, 20);
 		frequence.setBounds(140, 90, 100, 25);
+		labelSeconds.setBounds(240, 90, 100, 25);
 		montant.setBounds(140, 60, 100, 25);
+		labelPercent.setBounds(240, 60, 30, 25);
 		dest.setBounds(240, 130, 100, 20);
 		labelName.setBounds(40, 30, 200, 25);
 		labelFrequence.setBounds(40, 90, 200, 25);
 		labelMontant.setBounds(40, 60, 200, 25);
 		labelDest.setBounds(40, 130, 100, 20);
 		ajouter.addActionListener(this);
+		val.addActionListener(this);
 		c.add(labelFrequence);
+		c.add(labelSeconds);
 		c.add(labelDest);
 		c.add(labelMontant);
 		c.add(ajouter);
@@ -49,6 +55,7 @@ public class NouveauSalaire implements ActionListener {
 		c.add(name);
 		c.add(labelName);
 		c.add(val);
+		c.add(labelPercent);
 		frame.getRootPane().setDefaultButton(ajouter);
 		
 		
@@ -56,7 +63,7 @@ public class NouveauSalaire implements ActionListener {
 	
 	private JButton ajouter;
 	private JTextField montant, frequence, name;
-	private JLabel labelMontant, labelFrequence, labelDest, labelName;
+	private JLabel labelMontant, labelFrequence, labelDest, labelName, labelPercent, labelSeconds;
 	private JComboBox dest, type, val;
 	private JFrame frame;
 
@@ -97,6 +104,14 @@ public class NouveauSalaire implements ActionListener {
 			}
 			Salaires.save();
 			
+		}
+		if(e.getSource() == val) {
+			if (String.valueOf(val.getSelectedItem()).equals("rel") ) {
+				labelPercent.setText("‰");
+			} else {
+				labelPercent.setText("");
+			}
+		
 		}
 		
 		}

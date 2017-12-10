@@ -91,6 +91,11 @@ public class Gestion implements ActionListener, WindowListener {
 	public void close() {
 		frame.setVisible(false);
 	}
+	
+	public void open() {
+		frame.setVisible(true);
+	}
+	
 	public void Ver(){
 		VerState = true;	
 		depot.setEnabled(false);
@@ -152,6 +157,7 @@ public class Gestion implements ActionListener, WindowListener {
 	public void windowClosing(WindowEvent arg0) {
 		cpt.save();
 		System.out.println("savingOnClose");
+		this.close();
 		
 	}
 
