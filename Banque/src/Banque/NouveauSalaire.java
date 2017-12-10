@@ -31,7 +31,7 @@ public class NouveauSalaire implements ActionListener {
 		val.setBounds(270, 62, 80, 20);
 		name.setBounds(140, 30, 200, 25);
 		type.setBounds(130, 130, 100, 20);
-		ajouter.setBounds(240, 170, 100, 20);
+		ajouter.setBounds(240, 170, 100, 30);
 		frequence.setBounds(140, 90, 100, 25);
 		labelSeconds.setBounds(240, 90, 100, 25);
 		montant.setBounds(140, 60, 100, 25);

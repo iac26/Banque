@@ -18,7 +18,7 @@ public class Versement implements ActionListener {
 		labelDest = new JLabel("Destinataire");
 		labelMontant = new JLabel("Montant");
 		dest = new JComboBox(Banque.cl.keySet().toArray());
-		verser.setBounds(240, 140, 100, 20);
+		verser.setBounds(240, 140, 100, 30);
 		montant.setBounds(140, 40, 200, 25);
 		labelMontant.setBounds(40, 40, 200, 25);
 		dest.setBounds(240, 100, 100, 20);

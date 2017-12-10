@@ -39,27 +39,29 @@ public class Banque {
 		}
 		try {
 			salaires = Banque.load("salaires.sls");
-			//System.out.println(salaires);
-			for (int i = 1; i <= Integer.parseInt(salaires.get(0))*6; i = i + 6) {
-				Compte cpt;
-				String nm = salaires.get(i);
-				int m = Integer.parseInt(salaires.get(i+1));
-				int f = Integer.parseInt(salaires.get(i+2));
-				String t = salaires.get(i+3);
-				String n = salaires.get(i+4);
-				String v = salaires.get(i+5);
-				cpt = Banque.cl.get(nm);
-				Salaire salaire = new Salaire(cpt,m,f,t,n,nm,v);
-				salaire.start();
-				String nme = t + " - " + n + ": " + nm;
-				Banque.sls.put(nme, salaire);
-				sals.addElement(nme);
-				//System.out.println(nme);
+			//System.out.println(salaires.isEmpty());
+			if (!salaires.isEmpty()) {
+				for (int i = 1; i <= Integer.parseInt(salaires.get(0))*6; i = i + 6) {
+					Compte cpt;
+					String nm = salaires.get(i);
+					int m = Integer.parseInt(salaires.get(i+1));
+					int f = Integer.parseInt(salaires.get(i+2));
+					String t = salaires.get(i+3);
+					String n = salaires.get(i+4);
+					String v = salaires.get(i+5);
+					cpt = Banque.cl.get(nm);
+					Salaire salaire = new Salaire(cpt,m,f,t,n,nm,v);
+					salaire.start();
+					String nme = t + " - " + n + ": " + nm;
+					Banque.sls.put(nme, salaire);
+					sals.addElement(nme);
+					//System.out.println(nme);
+				}
 			}
 		}catch(IndexOutOfBoundsException e){
-			
+				
 		}
-		}
+	}
 	
 	public static List load(String fn){
 		List<String> files = new ArrayList<String>();

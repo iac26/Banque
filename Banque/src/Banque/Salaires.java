@@ -20,9 +20,9 @@ public class Salaires implements ActionListener, ListSelectionListener, MouseLis
 		modifier = new JButton("Modifier");
 		supprimer = new JButton("Supprimer");
 		scroll = new JScrollPane(list);
-		nouveau.setBounds(100, 540, 120, 20);
-		modifier.setBounds(100, 570, 120, 20);
-		supprimer.setBounds(100,600,120,20);
+		nouveau.setBounds(100, 540, 120, 30);
+		modifier.setBounds(100, 570, 120, 30);
+		supprimer.setBounds(100,600,120,30);
 		list.setBounds(20, 20, 250, 500);
 		scroll.setBounds(20, 20, 250, 500);
 		scroll.setViewportBorder(null);
@@ -40,7 +40,7 @@ public class Salaires implements ActionListener, ListSelectionListener, MouseLis
 		supprimer.addActionListener(this);
 		list.addListSelectionListener(this);
 		list.addMouseListener(this);
-		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 
 	}
 	public void hide() {

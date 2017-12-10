@@ -39,9 +39,9 @@ public class Gestion implements ActionListener, WindowListener {
 	    };
 	    verticalBar.addAdjustmentListener(downScroller);*/
 		save.setBounds(10, 420, 20 ,20);
-		depot.setBounds(100, 420, 100, 20);
-		retrait.setBounds(290, 420, 100, 20);
-		virement.setBounds(480, 420, 100, 20);
+		depot.setBounds(100, 420, 100, 30);
+		retrait.setBounds(290, 420, 100, 30);
+		virement.setBounds(480, 420, 100, 30);
 		infos.setBounds(20, 20, 650, 380);
 		histoire.setLineWrap(true);
 	    histoire.setEditable(false);
@@ -54,7 +54,7 @@ public class Gestion implements ActionListener, WindowListener {
 		scroll.setBorder(null);
 		solde.setEditable(false);
 		infos.setEditable(false);
-		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		//c.add(histoire);
 		//c.add(save);
 		c.add(depot);

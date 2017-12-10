@@ -28,14 +28,15 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 		scroll.setBounds(20, 20, 150, 500);
 		scroll.setViewportBorder(null);
 		scroll.setBorder(null);
-		ajouter.setBounds(45, 570, 100, 20);
-		ouvrir.setBounds(45, 540, 100, 20);
-		supprimer.setBounds(45, 600, 100, 20);
-		salaires.setBounds(45, 630, 100, 20);
-		ver.setBounds(10, 630, 20, 20);
+		ajouter.setBounds(45, 570, 100, 30);
+		ouvrir.setBounds(45, 540, 100, 30);
+		supprimer.setBounds(45, 600, 100, 30);
+		salaires.setBounds(45, 630, 100, 30);
+		ver.setBounds(10, 650, 20, 20);
 		ouvrir.setEnabled(false);
 		supprimer.setEnabled(false);
-		ver.setBackground(Color.GREEN);
+		ver.setOpaque(true);
+		ver.setBorderPainted(true);
 		c.add(ajouter);
 		c.add(ouvrir);
 		//c.add(list);
@@ -53,19 +54,17 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 		supprimer.addActionListener(this);
 		ver.addMouseListener(this);
 		Ver();
-		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-		
+		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 	}
 	public void deVer() {
 		System.out.println("unlocked");
 		VerState = false;
-		ver.setBackground(Color.GREEN);
+		ver.setBackground(new Color(0, 200, 0));
 		list.setEnabled(true);
-		supprimer.setBackground(null);
+		supprimer.setForeground(null);
 		ajouter.setEnabled(true);
-		ajouter.setBackground(null);
-		ouvrir.setBackground(null);
+		ajouter.setForeground(null);
+		ouvrir.setForeground(null);
 		if(!selEmpty){
 			ouvrir.setEnabled(true);
 			supprimer.setEnabled(true);
@@ -78,14 +77,14 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 	public void Ver(){
 		System.out.println("locked");
 		VerState = true;
-		ver.setBackground(Color.RED);
+		ver.setBackground(new Color(200, 0, 0));
 		list.setEnabled(false);
 		supprimer.setEnabled(false);
-		supprimer.setBackground(Color.RED);
+		supprimer.setForeground(Color.RED);
 		ajouter.setEnabled(false);
-		ajouter.setBackground(Color.RED);
+		ajouter.setForeground(Color.RED);
 		ouvrir.setEnabled(false);
-		ouvrir.setBackground(Color.RED);
+		ouvrir.setForeground(Color.RED);
 		sal.Ver();
 		for (int i = 0; i < gest.size(); i++){
 			gest.get(i).Ver();

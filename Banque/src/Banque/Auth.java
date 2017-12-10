@@ -50,8 +50,6 @@ public class Auth implements ActionListener{
 		B0.setBounds(65, 205, 40, 40);
 		BOK.setBounds(110, 205, 40, 40);
 		BCORR.setBounds(20, 205, 40, 40);
-		BOK.setBackground(Color.GREEN);
-		BCORR.setBackground(Color.RED);
 		c.add(B1);
 		c.add(B2);
 		c.add(B3);
@@ -141,9 +139,9 @@ public class Auth implements ActionListener{
 			//System.out.println(check);
 			if(tpe == "dv"){
 				if (code.equals(check)){
-					System.out.println("access granted");
 					test = true;
 					pass.setBackground(Color.GREEN);
+					System.out.println("access granted");
 					Banque.index.deVer();
 					frame.setVisible(false);
 					

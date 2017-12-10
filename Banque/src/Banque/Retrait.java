@@ -16,7 +16,7 @@ public class Retrait implements ActionListener {
 		retrait = new JButton("Retirer");
 		montant = new JTextField();
 		labelMontant = new JLabel("Montant");
-		retrait.setBounds(240, 100, 100, 20);
+		retrait.setBounds(240, 100, 100, 30);
 		montant.setBounds(140, 40, 200, 25);
 		labelMontant.setBounds(40, 40, 200, 25);
 		retrait.addActionListener(this);

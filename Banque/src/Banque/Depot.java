@@ -16,7 +16,7 @@ public class Depot implements ActionListener {
 		depot = new JButton("Deposer");
 		montant = new JTextField();
 		labelMontant = new JLabel("Montant");
-		depot.setBounds(240, 100, 100, 20);
+		depot.setBounds(240, 100, 100, 30);
 		labelMontant.setBounds(40, 40, 200, 25);
 		montant.setBounds(140, 40, 200, 25);
 		depot.addActionListener(this);

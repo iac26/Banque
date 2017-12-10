@@ -16,7 +16,7 @@ public class NouveauCompte implements ActionListener{
 		ajouter = new JButton("Creer");
 		nameField = new JTextField();
 		labelNameField = new JLabel("Nom");
-		ajouter.setBounds(240, 100, 100, 20);
+		ajouter.setBounds(240, 100, 100, 30);
 		nameField.setBounds(140, 40, 200, 25);
 		labelNameField.setBounds(40, 40, 200, 25);
 		ajouter.addActionListener(this);
