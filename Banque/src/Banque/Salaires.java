@@ -82,7 +82,7 @@ public class Salaires implements ActionListener, ListSelectionListener, MouseLis
 	}
 	
 	public static void save() {
-		System.out.println("saving salaires");
+		System.out.println("saving salaires.sls");
 		PrintWriter writer = null;
 		try {
 			writer = new PrintWriter( "salaires.sls", "ASCII");

@@ -58,6 +58,7 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 		
 	}
 	public void deVer() {
+		System.out.println("unlocked");
 		VerState = false;
 		ver.setBackground(Color.GREEN);
 		list.setEnabled(true);
@@ -75,6 +76,7 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 		}
 	}
 	public void Ver(){
+		System.out.println("locked");
 		VerState = true;
 		ver.setBackground(Color.RED);
 		list.setEnabled(false);
@@ -117,14 +119,13 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 			System.out.println(list.getSelectedValue());
 			cpt = Banque.cl.get(list.getSelectedValue()); 
 			System.out.println(cpt);
-			int v = cpt.getSolde();
-			System.out.println(v);
+			System.out.println("opening " + cpt.getName());
 			Gestion g = new Gestion(cpt);
 			gest.add(g);
 		}
 		if(e.getSource() == ajouter){
 			NouveauCompte nouveau = new NouveauCompte();
-			System.out.println("ajouter");
+			//System.out.println("ajouter");
 		}
 		if(e.getSource() == supprimer) {
 			String name = String.valueOf(list.getSelectedValue());
@@ -169,7 +170,7 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 			c.save();
 		}
 		Compte.saveAll();
-		System.out.println("exit");
+		System.out.println("bye");
 		System.exit(0);
 		
 	}
@@ -198,11 +199,9 @@ public class Index implements ActionListener, ListSelectionListener, WindowListe
 		if((ev.getSource() == list)&&(VerState == false)) {
 			if(ev.getClickCount() == 2) {
 				try {
-					System.out.println(list.getSelectedValue());
 					cpt = Banque.cl.get(list.getSelectedValue()); 
-					System.out.println(cpt);
-					int v = cpt.getSolde();
-					System.out.println(v);
+					//System.out.println(cpt);
+					System.out.println("opening " + cpt.getName());
 					Gestion g = new Gestion(cpt);
 					gest.add(g);
 				}catch(NullPointerException e){

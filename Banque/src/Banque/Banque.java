@@ -19,11 +19,12 @@ public class Banque {
 		index = new Index();
 		try {
 			cpts = load("cpt.idx");
+			System.out.println("reading cpt.idx "); 
 			Auth.setCheck(cpts.get(0));
 			for (int i = 1; i < cpts.size(); i++ ) {
-				System.out.println(cpts.get(i));
+				System.out.println("loading " + cpts.get(i));
 				cptinf = load(cpts.get(i));
-				System.out.println(cptinf);
+				//System.out.println(cptinf);
 				String name = cptinf.get(1);
 				Compte compte = new Compte(name);
 				Banque.cl.put(name, compte);
@@ -34,11 +35,11 @@ public class Banque {
 				}
 			}//Compte c, int m, int f, String t, String n, String nm
 		}catch(IndexOutOfBoundsException ex){
-			
+			System.out.println("no accounts");
 		}
 		try {
 			salaires = Banque.load("salaires.sls");
-			System.out.println(salaires);
+			//System.out.println(salaires);
 			for (int i = 1; i <= Integer.parseInt(salaires.get(0))*6; i = i + 6) {
 				Compte cpt;
 				String nm = salaires.get(i);
@@ -53,12 +54,11 @@ public class Banque {
 				String nme = t + " - " + n + ": " + nm;
 				Banque.sls.put(nme, salaire);
 				sals.addElement(nme);
-				System.out.println(nme);
+				//System.out.println(nme);
 			}
 		}catch(IndexOutOfBoundsException e){
 			
 		}
-			
 		}
 	
 	public static List load(String fn){

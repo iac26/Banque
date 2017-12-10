@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Compte {
 	public Compte(String s) {
+		System.out.println("creating " + s);
 		name = s;
 		solde = 0;		
 	}
@@ -41,7 +42,7 @@ public class Compte {
 		return str;
 	}
 	public void save() {
-		System.out.println("saving-" + name);
+		System.out.println("saving " + name + ".cpt");
 		PrintWriter writer = null;
 		try {
 			writer = new PrintWriter( this.getName()+ ".cpt", "ASCII");
@@ -64,9 +65,9 @@ public class Compte {
 		for (int i = 0; i < Index.lst.getSize(); i++) {
 			str = str + Index.lst.get(i) + ".cpt\n";
 		}
-		System.out.println(str);
 		writer.print(str);
 		writer.close();
+		System.out.println("saving cpt.idx");
 	}
 
 

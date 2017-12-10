@@ -53,7 +53,7 @@ public class Salaire {
 	}
 	
 	public void start() {
-		System.out.println(this.name + "started!");
+		System.out.println("starting " + this.name + " (" + cpt.getName() +")");
 		Timer timer1 = new Timer();
 		timer1.schedule(new TimerTask() {
 		
@@ -61,10 +61,9 @@ public class Salaire {
 			public void run(){
 				if (on) {
 					String str = type + " - " +name;
-					System.out.println("paying" + name + type);
+					System.out.println("paying " + cpt.getName() + " (" + name + ")");
 					float solde = cpt.getSolde();
 					if (type.equals("salaire")) {
-						System.out.println("value: "+val);
 						if (val.equals("abs")) {
 							cpt.depot(montant);
 							cpt.addHItem(Banque.TextAlign(str, montant, "+"));

@@ -156,7 +156,6 @@ public class Gestion implements ActionListener, WindowListener {
 	@Override
 	public void windowClosing(WindowEvent arg0) {
 		cpt.save();
-		System.out.println("savingOnClose");
 		this.close();
 		
 	}

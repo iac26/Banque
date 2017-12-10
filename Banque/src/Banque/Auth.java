@@ -102,7 +102,7 @@ public class Auth implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		pass.setBackground(null);
 		if (ok){
-			System.out.println("reset");
+			//System.out.println("reset");
 			code = "";
 			ok = false;
 		}
@@ -137,25 +137,29 @@ public class Auth implements ActionListener{
 			code = code + "0";
 		}
 		if (e.getSource() == BOK){
-			System.out.println(code);
-			System.out.println(check);
+			//System.out.println(code);
+			//System.out.println(check);
 			if(tpe == "dv"){
 				if (code.equals(check)){
+					System.out.println("access granted");
 					test = true;
 					pass.setBackground(Color.GREEN);
 					Banque.index.deVer();
 					frame.setVisible(false);
+					
 				}else{
 					test = false;
 					pass.setBackground(Color.RED);
+					System.out.println("access denied");
 				}
 			}else if(tpe == "cp"){
+				System.out.println("password updated");
 				check = code; 
 				frame.setVisible(false);
 			}
 			ok = true;
-			System.out.println(test);
-			System.out.print(ok);
+			//System.out.println(test);
+			//System.out.print(ok);
 		}
 		if (e.getSource() == BCORR){
 			try {
